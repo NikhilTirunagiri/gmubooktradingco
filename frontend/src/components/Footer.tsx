@@ -27,18 +27,18 @@ export default function Footer() {
           <div>
             <h4 className="text-[var(--color-accent-white)] mathco-h3 mb-3 sm:mb-4 text-base sm:text-lg">Quick Links</h4>
             <ul className="space-y-2 sm:space-y-3">
-              <li><a href="#" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Browse Books</a></li>
-              <li><a href="#" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Sell Books</a></li>
+              <li><Link href="/marketplace" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Browse Books</Link></li>
+              <li><Link href="/marketplace" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Sell Books</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-[var(--color-accent-white)] mathco-h3 mb-3 sm:mb-4 text-base sm:text-lg">Support</h4>
             <ul className="space-y-2 sm:space-y-3">
-              <li><a href="#" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Safety Tips</a></li>
-              <li><a href="#" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Contact Us</a></li>
-              <li><a href="#" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Privacy Policy</a></li>
-              <li><a href="#" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Terms of Service</a></li>
+              <li><Link href="/safety" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Safety Tips</Link></li>
+              <li><Link href="/contact" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Contact Us</Link></li>
+              <li><Link href="/privacypolicy" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Privacy Policy</Link></li>
+              <li><Link href="/tandc" className="text-white/80 mathco-body-sm hover:text-[var(--color-accent-mint)] transition-colors duration-300 text-sm">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
