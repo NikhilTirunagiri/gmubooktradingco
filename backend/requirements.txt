@@ -1,0 +1,26 @@
+# Web Framework
+fastapi==0.115.6
+uvicorn[standard]==0.30.1
+
+# Supabase
+supabase==2.27.0
+
+# JWT handling
+PyJWT==2.10.1
+python-jose[cryptography]==3.3.0
+
+# Environment variables
+python-dotenv==1.1.1
+
+# Data validation and serialization
+pydantic>=2.11.7,<3.0.0
+pydantic-settings>=2.5.2
+email-validator>=2.0.0  # Required for EmailStr validation in Pydantic
+
+# HTTP security
+python-multipart==0.0.20
+
+# Optional: Development dependencies
+# pytest==8.3.3
+# pytest-asyncio==0.24.0
+# httpx==0.27.2
