@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -75,11 +75,12 @@ export default function Home() {
                   {/* Bottom-right dot */}
                   <div style={{ position: 'absolute', bottom: '0', right: '0', width: '6px', height: '6px', backgroundColor: 'rgba(255, 255, 255, 1)', transform: 'translate(50%, 50%)' }}></div>
                   <h1 className="text-[var(--color-primary-white)] text-3xl sm:text-5xl lg:text-7xl font-medium leading-[1.1] tracking-tight flex flex-col justify-start items-start">
-                    Stop Losing Months to Manual Placement Work. Start Getting Results.
+                    An exclusive place for GMU students to buy, sell, trade used books.
                   </h1>
                   <p className="text-[var(--color-primary-white)]/80 text-base sm:text-lg lg:text-xl font-normal leading-relaxed max-w-xl">
-                  We automate your placement management, bring companies directly to your campus, and turn your students into job-ready candidates. Real results: 60% less coordination time, 300+ students placed in 2024, partnerships with 50+ hiring companies.
-                  </p>
+                	Forgot about inflated prices.                     
+			</p>
+
                   <a href="https://calendly.com/nikhiltirunagiri/30min?month=2025-12" className="flex items-center gap-2 text-[var(--color-primary-violet)] cursor-pointer hover:gap-3 transition-all duration-300 mb-6 sm:mb-8">
                     <span className="text-sm sm:text-base font-medium text-white">See how it works</span>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
