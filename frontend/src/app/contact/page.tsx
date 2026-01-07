@@ -41,7 +41,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-[var(--color-primary-violet)] font-semibold text-lg mb-2">Email Us</h3>
-                  <a href="mailto:support@gmubooktrading.com" className="text-[var(--color-teal)] hover:underline">
+                  <a href="mailto:support@gmubooktrading.com" className="text-[var(--color-primary-violet)] hover:underline">
                     support@gmubooktrading.com
                   </a>
                 </div>
@@ -54,7 +54,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-[var(--color-primary-violet)] font-semibold text-lg mb-2">Follow Us</h3>
-                  <a href="https://www.instagram.com/gmubooktradingco" target="_blank" rel="noopener noreferrer" className="text-[var(--color-teal)] hover:underline">
+                  <a href="https://www.instagram.com/gmubooktradingco" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-violet)] hover:underline">
                     @gmubooktradingco
                   </a>
                 </div>
