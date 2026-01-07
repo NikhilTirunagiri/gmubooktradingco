@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
                 {/* Introduction */}
                 <section className="mb-8">
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
-                    GMUBookTrading Company ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform. Please read this privacy policy carefully.
+                    GMUBookTrade Company ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform. Please read this privacy policy carefully.
                   </p>
                 </section>
 
@@ -270,7 +270,7 @@ export default function PrivacyPolicy() {
                     <li><strong>Data Portability:</strong> Request your data in a portable format</li>
                   </ul>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
-                    To exercise these rights, contact us at support@gmubooktrading.com. We will respond to your request within 30 days.
+                    To exercise these rights, contact us at support@gmubooktrade.com. We will respond to your request within 30 days.
                   </p>
                 </section>
 
@@ -323,7 +323,7 @@ export default function PrivacyPolicy() {
                     If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:
                   </p>
                   <div className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
-                    <p className="mb-1"><strong>Email:</strong> support@gmubooktrading.com</p>
+                    <p className="mb-1"><strong>Email:</strong> support@gmubooktrade.com</p>
                     <p><strong>Subject Line:</strong> Privacy Policy Inquiry</p>
                   </div>
                 </section>
@@ -331,7 +331,7 @@ export default function PrivacyPolicy() {
                 {/* Agreement */}
                 <section className="mb-8 p-6 bg-gray-50 rounded-lg">
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed font-medium">
-                    By using GMUBookTrading Company, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
+                    By using GMUBookTrade Company, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
                   </p>
                 </section>
 

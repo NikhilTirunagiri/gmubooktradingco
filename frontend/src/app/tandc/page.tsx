@@ -126,7 +126,7 @@ export default function TermsAndConditions() {
                 {/* Introduction */}
                 <section className="mb-8">
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
-                    Welcome to GMUBookTrading Company ("Platform", "we", "us", or "our"). We are not affiliated with George Mason Univeristy. By accessing or using our platform, you agree to be bound by these Terms and Conditions. Please read them carefully before using our services.
+                    Welcome to GMUBookTrade Company ("Platform", "we", "us", or "our"). We are not affiliated with George Mason Univeristy. By accessing or using our platform, you agree to be bound by these Terms and Conditions. Please read them carefully before using our services.
                   </p>
                 </section>
 
@@ -162,7 +162,7 @@ export default function TermsAndConditions() {
                 <section className="mb-8">
                   <h2 className="text-[var(--color-primary-violet)] mathco-h2 text-2xl font-semibold mb-4">3. Platform Use</h2>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed mb-3">
-                    3.1. GMUBookTrading Company serves as a marketplace facilitating connections between buyers and sellers of textbooks and course materials.
+                    3.1. GMUBookTrade Company serves as a marketplace facilitating connections between buyers and sellers of textbooks and course materials.
                   </p>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed mb-3">
                     3.2. We do not own, sell, or take possession of any books listed on the platform.
@@ -230,7 +230,7 @@ export default function TermsAndConditions() {
                 <section className="mb-8">
                   <h2 className="text-[var(--color-primary-violet)] mathco-h2 text-2xl font-semibold mb-4">7. Intellectual Property</h2>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed mb-3">
-                    7.1. All content on the platform, including design, logos, and code, is owned by GMUBookTrading Company and protected by copyright laws.
+                    7.1. All content on the platform, including design, logos, and code, is owned by GMUBookTrade Company and protected by copyright laws.
                   </p>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed mb-3">
                     7.2. Users retain ownership of content they post but grant us a license to display and distribute such content on the platform.
@@ -263,7 +263,7 @@ export default function TermsAndConditions() {
                 <section className="mb-8">
                   <h2 className="text-[var(--color-primary-violet)] mathco-h2 text-2xl font-semibold mb-4">10. Limitation of Liability</h2>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed mb-3">
-                    10.1. TO THE MAXIMUM EXTENT PERMITTED BY LAW, GMUBOOKTRADING COMPANY SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.
+                    10.1. TO THE MAXIMUM EXTENT PERMITTED BY LAW, GMUBOOKTRADE COMPANY SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.
                   </p>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
                     10.2. Our total liability shall not exceed $100 or the amount you paid to use the platform, whichever is less.
@@ -274,7 +274,7 @@ export default function TermsAndConditions() {
                 <section className="mb-8">
                   <h2 className="text-[var(--color-primary-violet)] mathco-h2 text-2xl font-semibold mb-4">11. Indemnification</h2>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
-                    You agree to indemnify and hold harmless GMUBookTrading Company from any claims, damages, losses, or expenses arising from your use of the platform or violation of these terms.
+                    You agree to indemnify and hold harmless GMUBookTrade Company from any claims, damages, losses, or expenses arising from your use of the platform or violation of these terms.
                   </p>
                 </section>
 
@@ -312,14 +312,14 @@ export default function TermsAndConditions() {
                     If you have questions about these Terms and Conditions, please contact us at:
                   </p>
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
-                    Email: support@gmubooktrading.com
+                    Email: support@gmubooktrade.com
                   </p>
                 </section>
 
                 {/* Agreement */}
                 <section className="mb-8 p-6 bg-gray-50 rounded-lg">
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed font-medium">
-                    By using GMUBookTrading Company, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
+                    By using GMUBookTrade Company, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
                   </p>
                 </section>
 

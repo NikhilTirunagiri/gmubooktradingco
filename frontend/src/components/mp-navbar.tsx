@@ -9,7 +9,7 @@ interface NavbarProps {
   currentPath?: string;
 }
 
-export default function Navbar({ isDarkBackground = true, variant = "fixed-top", currentPath = "/" }: NavbarProps) {
+export default function MPNavbar({ isDarkBackground = true, variant = "fixed-top", currentPath = "/" }: NavbarProps) {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -83,7 +83,7 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
               {...homeLinkProps}
               className={`${isDarkBackground ? 'text-white' : 'text-[var(--color-primary-violet)]'} text-base sm:text-lg font-bold leading-tight tracking-[-0.015em] mathco-h3 flex items-center transition-colors duration-300`}
             >
-              GMUBookTrade.com
+              Marketplace
             </HomeLink>
           </div>
           <div className="flex flex-1 justify-end gap-3 sm:gap-6">

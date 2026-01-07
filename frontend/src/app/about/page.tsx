@@ -139,7 +139,7 @@ export default function About() {
                   Like many students, we were frustrated by the high cost of textbooks and the hassle of buying and selling them. The campus bookstore prices were inflated, online marketplaces were filled with scammers, and trying to find books on Reddit or Facebook was a mess.
                 </p>
                 <p className="text-[var(--color-neutral-dark)] mathco-body text-base sm:text-lg leading-relaxed mb-4">
-                  We knew there had to be a better way. So we built GMUBookTrading Company—a platform exclusively for the GMU community where students can buy, sell, and trade textbooks safely and affordably. What started as a project for CS321 (Software Engineering) has now become a real solution we've made available to the entire GMU community.
+                  We knew there had to be a better way. So we built GMUBookTrade Company—a platform exclusively for the GMU community where students can buy, sell, and trade textbooks safely and affordably. What started as a project for CS321 (Software Engineering) has now become a real solution we've made available to the entire GMU community.
                 </p>
                 <p className="text-[var(--color-neutral-dark)] mathco-body text-base sm:text-lg leading-relaxed">
                   Every seller is verified through their GMU email, ensuring you're only dealing with fellow Patriots. No more worrying about scams, no more inflated prices—just a simple, secure marketplace built by students who understand the struggle.
@@ -263,7 +263,7 @@ export default function About() {
                   Join Our Community
                 </h2>
                 <p className="text-[var(--color-neutral-dark)] mathco-body text-base sm:text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
-                  Start saving money on textbooks today. Whether you're buying or selling, GMUBookTrading Company makes it easy.
+                  Start saving money on textbooks today. Whether you're buying or selling, GMUBookTrade Company makes it easy.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/marketplace" className="mathco-button-primary flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 text-base font-bold leading-normal tracking-[0.015em]">

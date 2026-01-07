@@ -41,8 +41,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-[var(--color-primary-violet)] font-semibold text-lg mb-2">Email Us</h3>
-                  <a href="mailto:support@gmubooktrading.com" className="text-[var(--color-primary-violet)] hover:underline">
-                    support@gmubooktrading.com
+                  <a href="mailto:support@gmubooktrade.com" className="text-[var(--color-primary-violet)] hover:underline">
+                    support@gmubooktrade.com
                   </a>
                 </div>
 
@@ -54,8 +54,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-[var(--color-primary-violet)] font-semibold text-lg mb-2">Follow Us</h3>
-                  <a href="https://www.instagram.com/gmubooktradingco" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-violet)] hover:underline">
-                    @gmubooktradingco
+                  <a href="https://www.instagram.com/gmubooktradeco" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-violet)] hover:underline">
+                    @gmubooktradeco
                   </a>
                 </div>
               </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                   </div>
                   <div className="glass-card rounded-xl p-6">
                     <h3 className="text-[var(--color-primary-violet)] font-semibold text-lg mb-2">
-                      Is GMUBookTrading Company only for GMU students?
+                      Is GMUBookTrade Company only for GMU students?
                     </h3>
                     <p className="text-[var(--color-neutral-dark)]">
                       Yes, our platform is exclusively for George Mason University students and faculty. You'll need to verify your GMU email address to create an account.
@@ -95,7 +95,7 @@ export default function Contact() {
                       Is there a fee to use the platform?
                     </h3>
                     <p className="text-[var(--color-neutral-dark)]">
-                      GMUBookTrading Company is completely free to use. No listing fees, no transaction fees. We're built by GMU students, for GMU students.
+                      GMUBookTrade Company is completely free to use. No listing fees, no transaction fees. We're built by GMU students, for GMU students.
                     </p>
                   </div>
                 </div>
