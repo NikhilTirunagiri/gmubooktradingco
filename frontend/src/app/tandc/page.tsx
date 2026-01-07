@@ -93,7 +93,7 @@ export default function TermsAndConditions() {
 
   return (
     <>
-      <Navbar isDarkBackground={isDarkBackground} variant="island" currentPath="/tandc" />
+      <Navbar isDarkBackground={false} variant="island" currentPath="/tandc" />
         
         {/* Main content with layout container */}
         <div
@@ -126,7 +126,7 @@ export default function TermsAndConditions() {
                 {/* Introduction */}
                 <section className="mb-8">
                   <p className="text-[var(--color-neutral-dark)] mathco-body text-base leading-relaxed">
-                    Welcome to GMUBookTrading Company ("Platform", "we", "us", or "our"). By accessing or using our platform, you agree to be bound by these Terms and Conditions. Please read them carefully before using our services.
+                    Welcome to GMUBookTrading Company ("Platform", "we", "us", or "our"). We are not affiliated with George Mason Univeristy. By accessing or using our platform, you agree to be bound by these Terms and Conditions. Please read them carefully before using our services.
                   </p>
                 </section>
 
