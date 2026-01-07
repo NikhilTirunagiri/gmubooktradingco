@@ -93,7 +93,7 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <Navbar isDarkBackground={false} variant="island" currentPath="/privacypolicy" />
+      <Navbar isDarkBackground={false} variant="fixed-top" currentPath="/privacypolicy" />
         
         {/* Main content with layout container */}
         <div
