@@ -67,8 +67,8 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
     ? "glass-nav rounded-2xl transition-transform duration-300 ease-in-out py-2.5 px-4 sm:py-2.5 sm:px-5"
     : "glass-nav transition-transform duration-300 ease-in-out py-2.5 px-4 sm:py-5 sm:px-9";
 
-  const HomeLink = variant === "island" ? Link : "a";
-  const homeLinkProps = variant === "island" ? { href: "/" } : { href: "#home" };
+  const HomeLink = Link;
+  const homeLinkProps = { href: "/" };
 
   return (
     <>
@@ -94,32 +94,32 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
                     Home
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
                   </Link>
-                  <a className={`${isDarkBackground ? (isActiveLink("/careers") ? 'text-white' : 'text-white/80') : (isActiveLink("/careers") ? 'text-[var(--color-primary-violet)]' : 'text-[var(--color-primary-violet)]/80')} hover:text-${isDarkBackground ? 'white' : '[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="/careers">
+                  <Link className={`${isDarkBackground ? (isActiveLink("/about") ? 'text-white' : 'text-white/80') : (isActiveLink("/about") ? 'text-[var(--color-primary-violet)]' : 'text-[var(--color-primary-violet)]/80')} hover:text-${isDarkBackground ? 'white' : '[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="/about">
                    About 
-                    <span className={`absolute bottom-0 left-0 ${isActiveLink("/careers") ? 'w-full' : 'w-0'} h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full`}></span>
-                  </a>
+                    <span className={`absolute bottom-0 left-0 ${isActiveLink("/about") ? 'w-full' : 'w-0'} h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full`}></span>
+                  </Link>
                 </>
               ) : (
                 <>
-                  <a className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="#home">
+                  <Link className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="/about">
                     About  
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-                  </a>
-                  <a className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="#home">
+                  </Link>
+                  <Link className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="/contact">
                     Contact Us  
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-                  </a>
+                  </Link>
                   
                 </>
               )}
-              <a className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="mailto:contact@thecollegetech.com?subject=Inquiry%20from%20TheCollegeTech%20Website">
+              <Link className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="/tandc">
                 Terms & Conditions
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             </div>
-            <a href="mailto:contact@thecollegetech.com?subject=Get%20Started%20-%20TheCollegeTech%20Services" className="mathco-button-primary flex min-w-[60px] sm:min-w-[70px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-7 sm:h-9 px-2 sm:px-3 text-xs sm:text-sm font-bold leading-normal tracking-[0.015em]">
+            <Link href="/marketplace" className="mathco-button-primary flex min-w-[60px] sm:min-w-[70px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-7 sm:h-9 px-2 sm:px-3 text-xs sm:text-sm font-bold leading-normal tracking-[0.015em]">
               <span className="truncate">Marketplace</span>
-            </a>
+            </Link>
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -148,43 +148,43 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
                   Home
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
                 </Link>
-                <a 
+                <Link 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-[var(--color-primary-violet)] text-lg font-medium py-3 border-b border-[var(--color-primary-violet)]/20 relative group transition-colors duration-300 hover:text-[var(--color-primary-violet)]" 
-                  href="/careers"
+                  href="/about"
                 >
                  About 
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               </>
             ) : (
               <>
-                <a 
+                <Link 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-[var(--color-primary-violet)] text-lg font-medium py-3 border-b border-[var(--color-primary-violet)]/20 relative group transition-colors duration-300 hover:text-[var(--color-primary-violet)]" 
-                  href="#home"
+                  href="/about"
                 >
                   About
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a 
+                </Link>
+                <Link 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-[var(--color-primary-violet)] text-lg font-medium py-3 border-b border-[var(--color-primary-violet)]/20 relative group transition-colors duration-300 hover:text-[var(--color-primary-violet)]" 
-                  href="/careers"
+                  href="/contact"
                 >
                  Contact Us 
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               </>
             )}
-            <a 
+            <Link 
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-[var(--color-primary-violet)] text-lg font-medium py-3 border-b border-[var(--color-primary-violet)]/20 relative group transition-colors duration-300 hover:text-[var(--color-primary-violet)]" 
-              href="mailto:contact@thecollegetech.com?subject=Inquiry%20from%20TheCollegeTech%20Website"
+              href="/tandc"
             >
               Terms & Conditions
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
