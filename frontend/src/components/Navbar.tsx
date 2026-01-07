@@ -13,8 +13,6 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,12 +36,7 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  useEffect(() => {
-    if (!isMobileMenuOpen) {
-      setIsProductsDropdownOpen(false);
-      setIsServicesDropdownOpen(false);
-    }
-  }, [isMobileMenuOpen]);
+
 
   const isActiveLink = (path: string) => {
     if (path === "/careers") {
@@ -101,60 +94,6 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
                     Home
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
                   </Link>
-                  <div 
-                    className="relative"
-                    onMouseEnter={() => setIsServicesDropdownOpen(true)}
-                    onMouseLeave={() => setIsServicesDropdownOpen(false)}
-                  >
-                    <button className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300 flex items-center gap-1`}>
-                      Services
-                      <svg className={`w-4 h-4 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                  </div>
-                  <div 
-                    className="relative"
-                    onMouseEnter={() => setIsProductsDropdownOpen(true)}
-                    onMouseLeave={() => setIsProductsDropdownOpen(false)}
-                  >
-                    <button className={`${isDarkBackground ? 'text-white/80 hover:text-white' : 'text-[var(--color-primary-violet)]/80 hover:text-[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300 flex items-center gap-1`}>
-                      Products
-                      <svg className={`w-4 h-4 transition-transform duration-300 ${isProductsDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    {isProductsDropdownOpen && (
-                      <div className={`absolute top-full right-0 pt-2 w-[500px] ${isDarkBackground ? 'bg-[#1a1a1a]' : 'bg-[#f5f5f5]'} rounded-lg shadow-2xl border ${isDarkBackground ? 'border-white/10' : 'border-[var(--color-primary-violet)]/10'} p-6 z-50`} onMouseEnter={() => setIsProductsDropdownOpen(true)} onMouseLeave={() => setIsProductsDropdownOpen(false)} style={{ marginTop: '0px', paddingTop: '16px' }}>
-                        <div className="grid grid-cols-2 gap-6">
-                          <Link 
-                            href="/vidya"
-                            className="group block"
-                            onClick={() => setIsProductsDropdownOpen(false)}
-                          >
-                            <div className={`font-bold text-base mb-1 ${isDarkBackground ? 'text-white group-hover:text-white/90' : 'text-[var(--color-primary-violet)] group-hover:text-[var(--color-primary-violet)]/90'} transition-colors duration-300`}>
-                              Vidya
-                            </div>
-                            <div className={`text-sm ${isDarkBackground ? 'text-white/60' : 'text-[var(--color-primary-violet)]/60'} leading-relaxed`}>
-                              Learning Management System for educational institutions
-                            </div>
-                          </Link>
-                          <Link 
-                            href="/placeeasy"
-                            className="group block"
-                            onClick={() => setIsProductsDropdownOpen(false)}
-                          >
-                            <div className={`font-bold text-base mb-1 ${isDarkBackground ? 'text-white group-hover:text-white/90' : 'text-[var(--color-primary-violet)] group-hover:text-[var(--color-primary-violet)]/90'} transition-colors duration-300`}>
-                              Placeeasy
-                            </div>
-                            <div className={`text-sm ${isDarkBackground ? 'text-white/60' : 'text-[var(--color-primary-violet)]/60'} leading-relaxed`}>
-                              Placement management platform for colleges and students
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
                   <a className={`${isDarkBackground ? (isActiveLink("/careers") ? 'text-white' : 'text-white/80') : (isActiveLink("/careers") ? 'text-[var(--color-primary-violet)]' : 'text-[var(--color-primary-violet)]/80')} hover:text-${isDarkBackground ? 'white' : '[var(--color-primary-violet)]'} text-sm font-medium leading-normal relative group transition-colors duration-300`} href="/careers">
                    About 
                     <span className={`absolute bottom-0 left-0 ${isActiveLink("/careers") ? 'w-full' : 'w-0'} h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full`}></span>
