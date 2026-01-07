@@ -41,8 +41,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-[var(--color-primary-violet)] font-semibold text-lg mb-2">Email Us</h3>
-                  <a href="mailto:contact@gmubooktradingco.com" className="text-[var(--color-teal)] hover:underline">
-                    contact@gmubooktradingco.com
+                  <a href="mailto:support@gmubooktrading.com" className="text-[var(--color-teal)] hover:underline">
+                    support@gmubooktrading.com
                   </a>
                 </div>
 
