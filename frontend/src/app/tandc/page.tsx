@@ -93,7 +93,7 @@ export default function TermsAndConditions() {
 
   return (
     <>
-      <Navbar isDarkBackground={false} variant="island" currentPath="/tandc" />
+      <Navbar isDarkBackground={false} variant="fixed-top" currentPath="/tandc" />
         
         {/* Main content with layout container */}
         <div
