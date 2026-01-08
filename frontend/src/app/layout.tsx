@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -11,8 +12,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "TheCollegeTech | Empowering Colleges with Innovative Tech Solutions",
-  description: "TheCollegeTech provides cutting-edge technology solutions, including Placeeasy for placements, Vidya LMS for learning management, and comprehensive IT services for educational institutions.",
+  title: "GMU Book Trading Co | Buy and Sell Textbooks",
+  description: "An exclusive place for GMU students to buy, sell, and trade used books at fair prices.",
   icons: {
     icon: '/Official Logo - 1.jpg',
     shortcut: '/Official Logo - 1.jpg',
@@ -31,8 +32,10 @@ export default function RootLayout({
         className={`${dmSans.variable} antialiased`}
         style={{ fontFamily: 'var(--font-dm-sans), "DM Sans", sans-serif' }}
       >
-        <Analytics />
-        {children}
+        <AuthProvider>
+          <Analytics />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

@@ -68,10 +68,19 @@ async def signup(user_data: UserSignup):
             # Check if user exists and return appropriate message
             try:
                 # Try to get user to see if it was created
-                users = supabase_admin.auth.admin.list_users()
+                users_response = supabase_admin.auth.admin.list_users()
+                # list_users() returns a dict with 'users' key, or could be a list
+                if isinstance(users_response, dict):
+                    users_list = users_response.get('users', [])
+                elif isinstance(users_response, list):
+                    users_list = users_response
+                else:
+                    # Try to access as attribute
+                    users_list = getattr(users_response, 'users', [])
+                
                 user_exists = any(
                     u.email and u.email.lower() == user_data.email.lower()
-                    for u in users.users
+                    for u in users_list
                 )
                 
                 if user_exists:
@@ -373,9 +382,19 @@ async def check_email_verification(email: str = None):
         # Get user by email using admin client
         users_response = supabase_admin.auth.admin.list_users()
         
+        # list_users() returns a dict with 'users' key containing the list of users
+        # Handle different return types for compatibility
+        if isinstance(users_response, dict):
+            users_list = users_response.get('users', [])
+        elif isinstance(users_response, list):
+            users_list = users_response
+        else:
+            # Try to access as attribute (in case it's an object)
+            users_list = getattr(users_response, 'users', [])
+        
         # Find user by email
         user = None
-        for u in users_response.users:
+        for u in users_list:
             if u.email and u.email.lower() == email.lower():
                 user = u
                 break

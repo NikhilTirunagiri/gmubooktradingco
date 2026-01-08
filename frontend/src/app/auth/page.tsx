@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
@@ -13,19 +15,85 @@ export default function Auth() {
     password: "",
     confirmPassword: "",
   });
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string>("");
+  const { login, signup } = useAuth();
+  const router = useRouter();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (error) setError("");
+    if (successMessage) setSuccessMessage("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle authentication logic here
-    if (isLogin) {
-      console.log("Login:", { email: formData.email, password: formData.password });
-    } else {
-      console.log("Sign Up:", formData);
+    setError("");
+    setSuccessMessage("");
+    setLoading(true);
+
+    try {
+      if (isLogin) {
+        // Validate email domain
+        if (!formData.email.toLowerCase().endsWith("@gmu.edu")) {
+          setError("Only GMU email addresses (@gmu.edu) are allowed");
+          setLoading(false);
+          return;
+        }
+
+        await login(formData.email, formData.password);
+        setSuccessMessage("Login successful! Redirecting...");
+        // Redirect to marketplace or home after successful login
+        setTimeout(() => {
+          router.push("/marketplace");
+        }, 1000);
+      } else {
+        // Validate email domain
+        if (!formData.email.toLowerCase().endsWith("@gmu.edu")) {
+          setError("Only GMU email addresses (@gmu.edu) are allowed");
+          setLoading(false);
+          return;
+        }
+
+        // Validate password length
+        if (formData.password.length < 12) {
+          setError("Password must be at least 12 characters long");
+          setLoading(false);
+          return;
+        }
+
+        // Validate password match
+        if (formData.password !== formData.confirmPassword) {
+          setError("Passwords do not match");
+          setLoading(false);
+          return;
+        }
+
+        await signup(formData.email, formData.password, formData.name);
+        // Store email in localStorage for verification page
+        localStorage.setItem("signup_email", formData.email);
+        setSuccessMessage(
+          "Account created successfully! Please check your email to verify your account before logging in."
+        );
+        // Clear form and switch to login after a delay
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: formData.email, // Keep email for convenience
+            password: "",
+            confirmPassword: "",
+          });
+          setIsLogin(true);
+          setSuccessMessage("");
+        }, 5000);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,6 +137,20 @@ export default function Auth() {
                         : "Create an account to start buy/sell books"}
                     </p>
                   </div>
+
+                  {/* Error Message */}
+                  {error && (
+                    <div className="mb-4 p-3 rounded-lg bg-red-500/20 border border-red-500/50 text-red-200 text-sm">
+                      {error}
+                    </div>
+                  )}
+
+                  {/* Success Message */}
+                  {successMessage && (
+                    <div className="mb-4 p-3 rounded-lg bg-green-500/20 border border-green-500/50 text-green-200 text-sm">
+                      {successMessage}
+                    </div>
+                  )}
 
                   {/* Form */}
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -153,9 +235,10 @@ export default function Auth() {
 
                     <button
                       type="submit"
-                      className="w-full px-6 py-3 rounded-lg bg-gradient-primary text-white font-medium hover:shadow-lg hover:scale-[1.02] transition-all duration-300 mt-2"
+                      disabled={loading}
+                      className="w-full px-6 py-3 rounded-lg bg-gradient-primary text-white font-medium hover:shadow-lg hover:scale-[1.02] transition-all duration-300 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {isLogin ? "Sign In" : "Create Account"}
+                      {loading ? "Processing..." : isLogin ? "Sign In" : "Create Account"}
                     </button>
                   </form>
 

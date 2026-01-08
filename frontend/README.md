@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GMU Book Trading Co - Frontend
 
-## Getting Started
+Frontend application for the GMU Book Trading Co platform, built with Next.js 15, React 19, and TypeScript.
 
-First, run the development server:
+## Features
+
+- 🔐 **Authentication**: Sign up and login with GMU email verification
+- 📧 **Email Verification**: Handles Supabase email verification links
+- 🎨 **Modern UI**: Beautiful, responsive design with Tailwind CSS
+- 🔄 **State Management**: React Context for authentication state
+- 🚀 **Next.js 15**: Latest Next.js with App Router
+
+## Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn package manager
+- Backend API running (see backend README)
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+### 2. Environment Configuration
+
+Create a `.env.local` file in the `frontend` directory:
+
+```bash
+# Backend API URL
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+**Note**: If your backend is running on a different port or URL, update this accordingly.
+
+### 3. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+frontend/
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── auth/         # Authentication pages
+│   │   │   ├── page.tsx  # Login/Signup page
+│   │   │   └── verify/   # Email verification page
+│   │   └── ...
+│   ├── components/       # React components
+│   ├── contexts/         # React Context providers
+│   │   └── AuthContext.tsx
+│   └── lib/              # Utility functions
+│       ├── api.ts        # API client
+│       └── utils.ts      # Helper functions
+├── public/               # Static assets
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authentication Flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Sign Up**: User creates account with GMU email (@gmu.edu)
+2. **Email Verification**: User receives verification email from Supabase
+3. **Verify Email**: User clicks link in email, redirected to `/auth/verify`
+4. **Login**: After verification, user can log in
+5. **Session**: JWT token stored in localStorage for authenticated requests
 
-## Deploy on Vercel
+## API Integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The frontend communicates with the backend API through the `apiClient` utility (`src/lib/api.ts`). All API calls are centralized here for easy maintenance.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Available API Methods
+
+- `signup(data)` - Create new user account
+- `login(data)` - Authenticate user
+- `logout()` - Sign out user
+- `getCurrentUser()` - Get authenticated user info
+- `resendVerification(email)` - Resend verification email
+- `checkVerification(email)` - Check if email is verified
+
+## Development
+
+### Key Technologies
+
+- **Next.js 15**: React framework with App Router
+- **React 19**: UI library
+- **TypeScript**: Type safety
+- **Tailwind CSS**: Styling
+- **React Context**: State management
+
+### Adding New Features
+
+1. Create components in `src/components/`
+2. Add API methods to `src/lib/api.ts` if needed
+3. Create pages in `src/app/` following Next.js App Router conventions
+4. Use `useAuth()` hook from `AuthContext` for authentication state
+
+## Troubleshooting
+
+### Backend Connection Issues
+
+- Ensure backend is running on the port specified in `NEXT_PUBLIC_API_URL`
+- Check CORS settings in backend `config.py`
+- Verify backend health endpoint: `http://localhost:8000/health`
+
+### Authentication Issues
+
+- Check browser console for errors
+- Verify Supabase credentials in backend
+- Ensure email verification is enabled in Supabase dashboard
+- Check that email domain validation is working (@gmu.edu only)
+
+### Build Issues
+
+- Clear `.next` folder: `rm -rf .next`
+- Reinstall dependencies: `rm -rf node_modules && npm install`
+- Check Node.js version: `node --version` (should be 18+)
+
+## Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_API_URL` | Backend API base URL | `http://localhost:8000` |
+
+## License
+
+See main project README for license information.
