@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore", message=".*urllib3.*")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.routes import auth, books
+from app.routes import auth, listings, requests
 
 app = FastAPI(
     title="GMU Book Trading Co API",
@@ -28,7 +28,8 @@ app.add_middleware(
 
 # Include routers
 app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
-app.include_router(books.router, prefix="/api/books", tags=["Books"])
+app.include_router(listings.router, prefix="/api/listings", tags=["Listings"])
+app.include_router(requests.router, prefix="/api/requests", tags=["Requests"])
 
 
 @app.get("/health")
