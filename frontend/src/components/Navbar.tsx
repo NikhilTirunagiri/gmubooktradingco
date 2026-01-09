@@ -83,7 +83,7 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
               {...homeLinkProps}
               className={`${isDarkBackground ? 'text-white' : 'text-[var(--color-primary-violet)]'} text-base sm:text-lg font-bold leading-tight tracking-[-0.015em] mathco-h3 flex items-center transition-colors duration-300`}
             >
-              GMUBookTrade.com
+              GMUBookTrade
             </HomeLink>
           </div>
           <div className="flex flex-1 justify-end gap-3 sm:gap-6">

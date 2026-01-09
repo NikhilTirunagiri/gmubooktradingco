@@ -11,8 +11,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "TheCollegeTech | Empowering Colleges with Innovative Tech Solutions",
-  description: "TheCollegeTech provides cutting-edge technology solutions, including Placeeasy for placements, Vidya LMS for learning management, and comprehensive IT services for educational institutions.",
+  title: "GMUBookTrade",
+  description: "Buy, Sell books with ease.",
   icons: {
     icon: '/Official Logo - 1.jpg',
     shortcut: '/Official Logo - 1.jpg',
