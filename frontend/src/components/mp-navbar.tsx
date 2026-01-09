@@ -65,7 +65,7 @@ export default function MPNavbar({ isDarkBackground = true, variant = "fixed-top
 
   const navClassName = variant === "island"
     ? "glass-nav rounded-2xl transition-transform duration-300 ease-in-out py-2.5 px-4 sm:py-2.5 sm:px-5"
-    : "glass-nav transition-transform duration-300 ease-in-out py-2.5 px-4 sm:py-5 sm:px-9";
+    : "glass-nav border border-b-1! border-gray-200! transition-transform duration-300 ease-in-out py-2.5 px-4 sm:py-5 sm:px-9 bg-white! ";
 
   const HomeLink = Link;
   const homeLinkProps = { href: "/marketplace" };
@@ -77,7 +77,7 @@ export default function MPNavbar({ isDarkBackground = true, variant = "fixed-top
         className={navClassName}
         style={navStyle}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <div className="flex items-center gap-2">  
             <HomeLink 
               {...homeLinkProps}
