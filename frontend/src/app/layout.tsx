@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { AuthProvider } from "@/contexts/AuthContext";
 
 const dmSans = DM_Sans({
@@ -12,15 +12,14 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GMU Book Trading Co | Buy and Sell Textbooks",
-  description: "An exclusive place for GMU students to buy, sell, and trade used books at fair prices.",
+  title: "GMUBookTrade",
+  description: "Buy, Sell books with ease.",
   icons: {
-    icon: '/Official Logo - 1.jpg',
-    shortcut: '/Official Logo - 1.jpg',
-    apple: '/Official Logo - 1.jpg',
+    icon: "/Official Logo - 1.jpg",
+    shortcut: "/Official Logo - 1.jpg",
+    apple: "/Official Logo - 1.jpg",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
