@@ -12,7 +12,7 @@ from app.models import (
     ListingType,
 )
 from app.database import supabase
-from app.dependencies import get_current_user
+from app.dependencies import get_current_user, get_current_user_optional
 
 router = APIRouter()
 
@@ -23,10 +23,12 @@ async def get_listings(
     type: Optional[ListingType] = Query(default=None, alias="type"),
     limit: int = Query(default=50, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
+    current_user: Optional[dict] = Depends(get_current_user_optional),
 ):
     """
     Get all listings with optional filtering
     Returns listings with joined book and user data
+    If user is authenticated, excludes their own listings (use /my-listings for own listings)
     """
     try:
         # Build query
@@ -36,6 +38,10 @@ async def get_listings(
             query = query.eq("status", status.value)
         if type:
             query = query.eq("type", type.value)
+        
+        # Exclude user's own listings if authenticated
+        if current_user:
+            query = query.neq("user_id", current_user["id"])
         
         query = query.order("created_at", desc=True).range(offset, offset + limit - 1)
         
@@ -106,6 +112,99 @@ async def get_listings(
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to fetch listings: {str(e)}",
+        )
+
+
+@router.get("/my-listings", response_model=ListingListResponse)
+async def get_my_listings(
+    status: Optional[ListingStatus] = Query(default=None, alias="status"),
+    type: Optional[ListingType] = Query(default=None, alias="type"),
+    limit: int = Query(default=50, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    current_user: dict = Depends(get_current_user),
+):
+    """
+    Get current user's own listings (requires authentication)
+    Returns only listings created by the authenticated user
+    """
+    try:
+        # Build query - only get user's listings
+        query = supabase.table("listings").select("*").eq("user_id", current_user["id"])
+        
+        if status:
+            query = query.eq("status", status.value)
+        if type:
+            query = query.eq("type", type.value)
+        
+        query = query.order("created_at", desc=True).range(offset, offset + limit - 1)
+        
+        response = query.execute()
+        
+        listings_data = response.data if response.data else []
+        
+        # Transform data to match ListingResponse model (same as get_listings)
+        listings = []
+        for listing in listings_data:
+            # Get images for this listing
+            images_response = (
+                supabase.table("listing_images")
+                .select("image_url")
+                .eq("listing_id", listing["id"])
+                .order("created_at")
+                .execute()
+            )
+            images = [img["image_url"] for img in (images_response.data or [])]
+            
+            # Get book data if book_id exists
+            book_title = None
+            book_author = None
+            book_isbn = None
+            if listing.get("book_id"):
+                try:
+                    book_response = (
+                        supabase.table("books")
+                        .select("title, author, isbn")
+                        .eq("id", listing["book_id"])
+                        .single()
+                        .execute()
+                    )
+                    if book_response.data:
+                        book_title = book_response.data.get("title")
+                        book_author = book_response.data.get("author")
+                        book_isbn = book_response.data.get("isbn")
+                except:
+                    pass
+            
+            # Get user display name
+            user_display_name = None
+            if listing.get("user_id"):
+                try:
+                    profile_response = (
+                        supabase.table("profiles")
+                        .select("display_name")
+                        .eq("id", listing["user_id"])
+                        .single()
+                        .execute()
+                    )
+                    if profile_response.data:
+                        user_display_name = profile_response.data.get("display_name")
+                except:
+                    pass
+            
+            listings.append({
+                **listing,
+                "book_title": book_title,
+                "book_author": book_author,
+                "book_isbn": book_isbn,
+                "user_display_name": user_display_name,
+                "images": images,
+            })
+        
+        return ListingListResponse(listings=listings, count=len(listings))
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch your listings: {str(e)}",
         )
 
 

@@ -226,13 +226,18 @@ async def login(user_data: UserLogin):
 
 
 @router.post("/logout", response_model=dict)
-async def logout():
+async def logout(current_user: dict = Depends(get_current_user)):
     """
-    Logout the current user
+    Logout the current user (requires authentication)
+    This invalidates the current session token
     """
     try:
+        # Sign out using Supabase - this invalidates the token
         supabase.auth.sign_out()
-        return {"message": "Logout successful"}
+        return {
+            "message": "Logout successful",
+            "user_id": current_user["id"]
+        }
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
