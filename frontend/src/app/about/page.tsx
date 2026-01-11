@@ -96,8 +96,8 @@ export default function About() {
     { name: "Adolfo Posada-Hernandez", role: "", image: "https://media.licdn.com/dms/image/v2/D4E03AQF4LCX2ud6DtA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731688506713?e=1769644800&v=beta&t=QGKoQeFEgnlN5aS9RV6Dm8Wc8StXchZPnIYXhl3NhYE", linkedin: "https://www.linkedin.com/in/adolfoph/" },
     { name: "Zaina Qadan", role: "", image: "https://media.licdn.com/dms/image/v2/D4D03AQHG7hnCRowQaA/profile-displayphoto-scale_400_400/B4DZgkTNgPHwAg-/0/1752955673063?e=1769644800&v=beta&t=xQ_pL5BRM2IjNw0W1wWY6JU_Qxffo_pwuslv-EKzylE", linkedin: "https://www.linkedin.com/in/zaina-qadan-a565a1304/" },
     { name: "Manzoor Ahmad Naziri", role: "", image: "https://media.licdn.com/dms/image/v2/D4E03AQG8MGZyCPYdXw/profile-displayphoto-scale_400_400/B4EZt77FTCI0Ag-/0/1767310645787?e=1769644800&v=beta&t=14zLsWad4WuUJR-Ghv42WEsGldaU2WObf8-VkiA7aqU", linkedin: "https://www.linkedin.com/in/manzoor-naziri-6335a0254/" },
-    { name: "Nikhil Tirunagiri", role: "Currently Managing the platform", image: "https://media.licdn.com/dms/image/v2/D4E03AQG2NC14e-2ClA/profile-displayphoto-scale_400_400/B4EZg9msHaGYAk-/0/1753380231441?e=1769644800&v=beta&t=cK0SxqwteaWm2qxtXd6nmc40xHzT_ObHDcwvTpZnK5c", linkedin: "https://www.linkedin.com/in/nikhiltirunagiri/" },
-    { name: "Rahul Sharma", role: "Currently Managing the platform", image: "https://media.licdn.com/dms/image/v2/D5603AQFHMJlSnyOzkQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719237832732?e=1769644800&v=beta&t=_aqWzoN3DI1pd5rNG3H5SOf90vwfZvSBjsUKktMYaBM", linkedin: "https://www.linkedin.com/in/rahulsharma-cs/" },
+    { name: "Nikhil Tirunagiri", role: "Built and currently Managing this platform", image: "https://media.licdn.com/dms/image/v2/D4E03AQG2NC14e-2ClA/profile-displayphoto-scale_400_400/B4EZg9msHaGYAk-/0/1753380231441?e=1769644800&v=beta&t=cK0SxqwteaWm2qxtXd6nmc40xHzT_ObHDcwvTpZnK5c", linkedin: "https://www.linkedin.com/in/nikhiltirunagiri/" },
+    { name: "Rahul Sharma", role: "Built and currently Managing this platform", image: "https://media.licdn.com/dms/image/v2/D5603AQFHMJlSnyOzkQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719237832732?e=1769644800&v=beta&t=_aqWzoN3DI1pd5rNG3H5SOf90vwfZvSBjsUKktMYaBM", linkedin: "https://www.linkedin.com/in/rahulsharma-cs/" },
     { name: "Jung Yang", role: "" }
   ];
 
@@ -146,67 +146,7 @@ export default function About() {
                 </p>
               </section>
 
-              {/* Our Mission */}
-              <section className="mb-8 p-6 sm:p-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl">
-                <h2 className="text-[var(--color-primary-violet)] mathco-h2 text-2xl sm:text-3xl font-semibold mb-4">Our Mission</h2>
-                <p className="text-[var(--color-neutral-dark)] mathco-body text-base sm:text-lg leading-relaxed">
-                  To make education more affordable by creating a trusted, GMU-exclusive marketplace where students can easily buy and sell textbooks at fair prices, while reducing waste and strengthening our campus community.
-                </p>
-              </section>
 
-              {/* Why We're Different */}
-              <section className="mb-8">
-                <h2 className="text-[var(--color-primary-violet)] mathco-h2 text-2xl sm:text-3xl font-semibold mb-6">Why We're Different</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="glass-card rounded-xl p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm40-68a12,12,0,1,1-12-12A12,12,0,0,1,168,148Zm-88,0a12,12,0,1,1-12-12A12,12,0,0,1,80,148Z"/>
-                      </svg>
-                    </div>
-                    <h3 className="text-[var(--color-primary-violet)] mathco-h3 text-lg sm:text-xl font-semibold mb-3">GMU-Exclusive</h3>
-                    <p className="text-[var(--color-neutral-dark)] mathco-body text-sm sm:text-base">
-                      Every user is verified through their GMU email. Trade with confidence knowing you're dealing with fellow students and faculty.
-                    </p>
-                  </div>
-
-                  <div className="glass-card rounded-xl p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                        <path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"/>
-                      </svg>
-                    </div>
-                    <h3 className="text-[var(--color-primary-violet)] mathco-h3 text-lg sm:text-xl font-semibold mb-3">Safe & Secure</h3>
-                    <p className="text-[var(--color-neutral-dark)] mathco-body text-sm sm:text-base">
-                      No more sketchy Craigslist deals or Facebook scams. Our platform is built with safety and trust in mind.
-                    </p>
-                  </div>
-
-                  <div className="glass-card rounded-xl p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                        <path d="M200,168a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,168Zm-8-40H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Zm40-64V216a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V64A16,16,0,0,1,40,48H92.26a47.92,47.92,0,0,1,71.48,0H216A16,16,0,0,1,232,64ZM96,64h64a32,32,0,0,0-64,0ZM216,64H179.36A47.92,47.92,0,0,1,160,88H96a47.92,47.92,0,0,1-19.36-24H40V216H216Z"/>
-                      </svg>
-                    </div>
-                    <h3 className="text-[var(--color-primary-violet)] mathco-h3 text-lg sm:text-xl font-semibold mb-3">Simple to Use</h3>
-                    <p className="text-[var(--color-neutral-dark)] mathco-body text-sm sm:text-base">
-                      List a book in seconds, browse easily, and connect directly with buyers or sellers. No complicated processes.
-                    </p>
-                  </div>
-
-                  <div className="glass-card rounded-xl p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm40-68a12,12,0,0,1-12,12H116v36a8,8,0,0,1-16,0V160H88a12,12,0,0,1,0-24h12V100a8,8,0,0,1,16,0v36h40A12,12,0,0,1,168,148Z"/>
-                      </svg>
-                    </div>
-                    <h3 className="text-[var(--color-primary-violet)] mathco-h3 text-lg sm:text-xl font-semibold mb-3">Save Money</h3>
-                    <p className="text-[var(--color-neutral-dark)] mathco-body text-sm sm:text-base">
-                      Buy from fellow students at fair prices and sell your books for more than the bookstore buyback offers.
-                    </p>
-                  </div>
-                </div>
-              </section>
 
               {/* Meet the Team */}
               <section className="mb-8">

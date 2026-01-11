@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { apiClient } from "@/lib/api";
+import { useAuth } from "@/contexts/AuthContext";
 
 function VerifyEmailContent() {
   const [status, setStatus] = useState<"checking" | "verified" | "error" | "expired">("checking");
@@ -12,6 +13,7 @@ function VerifyEmailContent() {
   const [email, setEmail] = useState<string>("");
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { openAuthModal } = useAuth();
 
   useEffect(() => {
     const checkVerification = async () => {
@@ -53,9 +55,9 @@ function VerifyEmailContent() {
             setMessage("Your email has been verified successfully! You can now log in.");
             // Clear stored email
             localStorage.removeItem("signup_email");
-            // Redirect to login after 3 seconds
+            // Redirect to marketplace after 3 seconds (user can login via modal)
             setTimeout(() => {
-              router.push("/auth");
+              router.push("/marketplace");
             }, 3000);
             return;
           }
@@ -186,12 +188,12 @@ function VerifyEmailContent() {
                     )}
 
                     <div className="text-center mt-6">
-                      <Link
-                        href="/auth"
+                      <button
+                        onClick={openAuthModal}
                         className="text-[var(--color-primary-blue)] font-medium hover:underline transition-all"
                       >
                         Back to Login
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>

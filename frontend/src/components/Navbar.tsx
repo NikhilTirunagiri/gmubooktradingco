@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface NavbarProps {
   isDarkBackground?: boolean;
@@ -13,6 +14,7 @@ export default function Navbar({ isDarkBackground = true, variant = "fixed-top",
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { openAuthModal } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {

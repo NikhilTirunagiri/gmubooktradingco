@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface NavbarProps {
   isDarkBackground?: boolean;
@@ -13,6 +14,7 @@ export default function MPNavbar({ isDarkBackground = true, variant = "fixed-top
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isAuthenticated, openAuthModal } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,16 +111,24 @@ export default function MPNavbar({ isDarkBackground = true, variant = "fixed-top
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </div>
-            <Link href="/messages" className="mathco-button-primary flex w-8 h-8 sm:w-10 sm:h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full text-xs sm:text-sm font-bold leading-normal tracking-[0.015em]">
+            <Link href="/marketplace/messages" className="mathco-button-primary flex w-8 h-8 sm:w-10 sm:h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full text-xs sm:text-sm font-bold leading-normal tracking-[0.015em]">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" className="sm:w-5 sm:h-5">
                 <path d="M216,48H40A16,16,0,0,0,24,64V224a15.85,15.85,0,0,0,9.24,14.5A16.13,16.13,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78.69.69,0,0,0,.13-.11L82.5,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H82.5a16,16,0,0,0-10.3,3.75l-.12.11L40,224V64H216ZM88,112a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H96A8,8,0,0,1,88,112Zm0,32a8,8,0,0,1,8-8h64a8,8,0,1,1,0,16H96A8,8,0,0,1,88,144Z"></path>
               </svg>
             </Link>            
-            <Link href="/profile" className="mathco-button-primary flex w-8 h-8 sm:w-10 sm:h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full text-xs sm:text-sm font-bold leading-normal tracking-[0.015em]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" className="sm:w-5 sm:h-5">
-                <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
-              </svg>
-            </Link>
+            {isAuthenticated ? (
+              <Link href="/marketplace/profile" className="mathco-button-primary flex w-8 h-8 sm:w-10 sm:h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full text-xs sm:text-sm font-bold leading-normal tracking-[0.015em]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" className="sm:w-5 sm:h-5">
+                  <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+                </svg>
+              </Link>
+            ) : (
+              <button onClick={openAuthModal} className="mathco-button-primary flex w-8 h-8 sm:w-10 sm:h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full text-xs sm:text-sm font-bold leading-normal tracking-[0.015em]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" className="sm:w-5 sm:h-5">
+                  <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+                </svg>
+              </button>
+            )}
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

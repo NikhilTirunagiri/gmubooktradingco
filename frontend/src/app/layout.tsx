@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { AuthProvider } from "@/contexts/AuthContext";
+import AuthModalWrapper from "@/components/AuthModalWrapper";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <AuthProvider>
           <Analytics />
           {children}
+          <AuthModalWrapper />
         </AuthProvider>
       </body>
     </html>
